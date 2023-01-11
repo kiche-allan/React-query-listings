@@ -1,4 +1,4 @@
-import { QueryClientProvider } from "react-query";
+import { QueryClientProvider, useMutation, useQuery } from "react-query";
 
 
 export default function App() {
@@ -21,5 +21,17 @@ export default function App() {
 }
 
 function Todos() {
+  //useQueryClient hook to access the client
   const queryClient = useQueryClient();
+
+  //useQuery hook to fetch todos to get queries
+  const query = useQuery("todos", fgetTodos);
+
+  //useMutation hook to update todos
+  const Mutation = useMutation(postTodo, {
+    onSuccess: () => {
+      //invalidate the todos query to refetch the todos
+      queryClient.invalidateQueries("todos");
+    }
+  })
 }
