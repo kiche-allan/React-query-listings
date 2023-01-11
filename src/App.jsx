@@ -1,7 +1,11 @@
+import { QueryClientProvider } from "react-query";
 
 
 export default function App() {
   return (
-    <div>App</div>
+    //Provide the client to your app
+    <QueryClientProvider client = {queryClient}>
+    <Todos />
+    </QueryClientProvider>
   )
 }
