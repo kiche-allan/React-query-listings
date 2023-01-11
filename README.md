@@ -8,4 +8,9 @@ the major concepts of react include:
     2. Mutations
     3. Query Invalidations
 
-    Query is a way to fetch and cache data . Can be created using usequery hook
+    Query is a way to fetch and cache data . Can be created using usequery hook and passing it as a key tha represnts the data you want to fetch
+
+    const {data, status} = useQuery('users', () =>
+    fetch('https://my-api.com/users'))
+
+    Mutations - 
