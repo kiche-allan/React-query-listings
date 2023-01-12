@@ -2,6 +2,11 @@
 // import { ReactQueryDevtools } from 'react-query/devtools'
 // import { getTodos, postTodo } from '../my-api'
 
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import People from "./components/People";
+import Planets from "./components/Planets";
+
 // //Create an instnce of  QueryClient called queryclient.
 
 // const queryClient = new QueryClient();
@@ -63,10 +68,14 @@
 
 
 export default function App() {
+  const [page, setPage] = useState('planets');
   return (
     <>
-    <h1>Star Wars Info</h1><div className="content">
-      <p>hello</p>
+    <h1>Star Wars Info</h1>
+    <Navbar/>
+    <div className="content">
+      {page === 'planets' ? <Planets /> : <People />}
+     
     </div>
     </>
   )
