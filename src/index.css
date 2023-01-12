@@ -10,3 +10,8 @@ body {
     width: 960px;
     margin: 0 auto;
 }
+h1{
+    color: #ffff57;
+    font-size: 3em;
+    letter-spacing: 2px;
+}
