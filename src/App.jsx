@@ -66,13 +66,13 @@ import Planets from "./components/Planets";
 // render(<App />, document.getElementById('root'))
 
 
-
+// This is a functional component in React called "App". It uses the Hook "useState" to track the value of a "page" state variable, which is initially set to "planets". The component renders a header, a Navbar component that takes a "setPage" prop, and a div with the class "content". Inside the content div, it renders a component called "Planets" or "People" based on the value of the "page" state variable. The ternary operator {page === 'planets' ? <Planets /> : <People />} is used to conditionally render either the Planets component or the People component.
 export default function App() {
   const [page, setPage] = useState('planets');
   return (
     <>
     <h1>Star Wars Info</h1>
-    <Navbar/>
+    <Navbar setPage = {setPage}/>
     <div className="content">
       {page === 'planets' ? <Planets /> : <People />}
      
